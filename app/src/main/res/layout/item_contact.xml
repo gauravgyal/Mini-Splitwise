@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="holder"
+                type="com.gauravgoyal.test.model.ExpenseHolder" />
+
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/fab_margin"
+        >
+
+
+    <TextView android:id="@+id/name"
+              app:layout_constraintStart_toStartOf="parent"
+              android:layout_marginTop="@dimen/fab_margin"
+              app:layout_constraintTop_toTopOf="parent"
+              android:text="@{holder.name}"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+
+    <com.gauravgoyal.test.ui.custom.EditTextBackEvent
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            app:layout_constraintTop_toTopOf="@+id/name"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            android:id="@+id/paid"
+            android:inputType="number"
+            android:text="@={holder.paid}"
+            android:layout_width="wrap_content"
+            android:hint="@string/paid"
+            android:layout_height="wrap_content"/>
+
+    <com.gauravgoyal.test.ui.custom.EditTextBackEvent
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            app:layout_constraintTop_toTopOf="@+id/paid"
+            app:layout_constraintStart_toEndOf="@+id/paid"
+            android:inputType="number"
+            android:id="@+id/share"
+            android:text="@={holder.share}"
+            android:layout_width="wrap_content"
+            android:hint="@string/share"
+            android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
